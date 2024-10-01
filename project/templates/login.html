@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technician Dashboard</title>
+    <title>Login</title>
 
     <!-- Load Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -95,10 +95,8 @@ a{color:inherit;text-decoration:none}
 	border-radius:25px;
 	background:rgba(255,255,255,.1);
 }
-.login-form .group input[data-type="password"]{
-	text-security:circle;
-	-webkit-text-security:circle;
-}
+
+
 .login-form .group .label{
 	color:#aaa;
 	font-size:12px;
@@ -183,7 +181,7 @@ a{color:inherit;text-decoration:none}
 <div class="login-wrap">
 	<div class="login-html">
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
 		<div class="login-form">
 			<div class="sign-in-htm">
 				<div class="group">
@@ -204,43 +202,11 @@ a{color:inherit;text-decoration:none}
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
+					<a href="#forgot">Forgot Password?</a><br><br>
+					<a href="{% url 'register' %}">Not a member?Sign up</a>
 				</div>
 			</div>
-			<form action="" method="post"></form>
-			<div class="sign-up-htm">
-				<div class="group">
-					<label for="user" class="label">Username</label>
-              <input id="user" type="text" name="username" class="input" value="{{ form.username.value }}" placeholder="{{ form.username.label }}">
-              <!-- Render field errors -->
-              {{ form.username.errors }}
-            </div>
-
-            <div class="group">
-              <label for="email" class="label">Email Address</label>
-              <input id="email" type="email" name="email" class="input" value="{{ form.email.value }}" placeholder="{{ form.email.label }}">
-              {{ form.email.errors }}
-            </div>
-
-            <div class="group">
-              <label for="pass" class="label">Password</label>
-              <input id="pass" type="password" name="password1" class="input" data-type="password" placeholder="{{ form.password1.label }}">
-              {{ form.password1.errors }}
-            </div>
-
-            <div class="group">
-              <label for="pass2" class="label">Repeat Password</label>
-              <input id="pass2" type="password" name="password2" class="input" data-type="password" placeholder="{{ form.password2.label }}">
-              {{ form.password2.errors }}
-            </div>
-
-            <div class="group">
-              <input type="submit" class="button" value="Sign Up">
-            </div>
-            <div class="hr"></div>
-            <div class="foot-lnk">
-              <label for="tab-1">Already Member?</label>
-				</div>
+			
 			</div>
 		</div>
 	</div>

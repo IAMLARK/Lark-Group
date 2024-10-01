@@ -8,7 +8,7 @@ from .forms import SignUpForm
 
 
 
-@unauthenticated_user
+# @unauthenticated_user
 def login_user(request):
      if request.method == 'POST':
         username = request.POST['username']
@@ -45,7 +45,7 @@ def register_user(request):
             user = authenticate(username=username, password=password)
             login(request, user )
             messages.success(request, "You have succesfully registered Welcome")
-            return redirect('home')
+            return redirect('login')
     else: 
             form = SignUpForm()
             return render(request, 'register.html', {'form':form})
